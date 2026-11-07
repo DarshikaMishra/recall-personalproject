@@ -1,69 +1,162 @@
-import Image from "next/image";
+"use client";
+
+import { useState, type FormEvent } from "react";
+
+type DocumentPreview = {
+  filename: string;
+  pageCount: number;
+  characterCount: number;
+  pages: {
+    pageNumber: number;
+    text: string;
+  }[];
+};
 
 export default function Home() {
+  const [file, setFile] = useState<File | null>(null);
+  const [preview, setPreview] = useState<DocumentPreview | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setError("");
+    setPreview(null);
+
+    if (!file) {
+      setError("Choose a PDF first.");
+      return;
+    }
+
+    if (!file.name.toLowerCase().endsWith(".pdf")) {
+      setError("Please choose a PDF file.");
+      return;
+    }
+
+    if (file.size === 0 || file.size > 4_000_000) {
+      setError("Choose a nonempty PDF smaller than 4 MB.");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const formData = new FormData();
+      formData.append("file", file);
+
+      const response = await fetch("/api/documents/preview", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "The upload failed.");
+      }
+
+      setPreview(data);
+    } catch (error) {
+      setError(
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again.",
+      );
+    } finally {
+      setLoading(false);
+    }
+  }
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+    <main className="min-h-screen bg-slate-950 px-6 py-16 text-slate-100">
+      <div className="mx-auto max-w-3xl space-y-8">
+        <header>
+          <p className="mb-3 text-sm font-medium text-teal-300">RECALL</p>
+          <h1 className="text-4xl font-semibold tracking-tight">
+            Start with your document.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="mt-4 text-slate-400">
+            Upload a text-based PDF to preview its text by page. Search and
+            answers are coming next.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+        </header>
+
+        <form
+          onSubmit={handleSubmit}
+          className="space-y-5 rounded-2xl border border-slate-700 bg-slate-900 p-6"
+        >
+          <label htmlFor="pdf" className="block font-medium">
+            Select a PDF
+          </label>
+
+          <input
+            id="pdf"
+            name="file"
+            type="file"
+            accept=".pdf,application/pdf"
+            disabled={loading}
+            aria-describedby="upload-help"
+            onChange={(event) => {
+              setFile(event.target.files?.[0] ?? null);
+              setPreview(null);
+              setError("");
+            }}
+            className="block w-full text-sm file:mr-4 file:rounded-lg file:border-0 file:bg-slate-700 file:px-4 file:py-2 file:text-white"
+          />
+
+          <p id="upload-help" className="text-sm text-slate-400">
+            Under 4 MB · Up to 30 pages · Text-based PDFs only
+          </p>
+
+          <button
+            type="submit"
+            disabled={loading || !file}
+            className="rounded-lg bg-teal-300 px-5 py-3 font-semibold text-slate-950 disabled:cursor-not-allowed disabled:opacity-50"
           >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+            {loading ? "Extracting text…" : "Preview document"}
+          </button>
+
+          {loading && (
+            <p role="status" className="text-sm text-slate-300">
+              Reading your PDF and preserving its page numbers…
+            </p>
+          )}
+
+          {error && (
+            <p role="alert" className="text-sm text-rose-300">
+              {error}
+            </p>
+          )}
+        </form>
+
+        {preview && (
+          <section className="space-y-4">
+            <div role="status">
+              <h2 className="break-words text-xl font-semibold">
+                {preview.filename}
+              </h2>
+              <p className="mt-1 text-sm text-teal-300">
+                Extraction complete: {preview.pageCount} pages ·{" "}
+                {preview.characterCount.toLocaleString()} characters
+              </p>
+            </div>
+
+            {preview.pages.map((page) => (
+              <article
+                key={page.pageNumber}
+                className="rounded-xl border border-slate-700 p-5"
+              >
+                <h3 className="mb-3 font-medium text-teal-300">
+                  Page {page.pageNumber}
+                </h3>
+                <p className="whitespace-pre-wrap break-words text-sm leading-7 text-slate-300">
+                  {page.text || "No readable text on this page."}
+                </p>
+              </article>
+            ))}
+          </section>
+        )}
+      </div>
+    </main>
   );
 }
