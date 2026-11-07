@@ -1,5 +1,9 @@
 # Recall
 
+[Live Demo](https://recall-personalproject.vercel.app) · [GitHub](https://github.com/DarshikaMishra/recall-personalproject)
+
+The public demo uses precomputed sample answers. The full live workflow is available locally.
+
 A PDF question-answering app that retrieves relevant passages and generates
 answers with source excerpts and page citations.
 
