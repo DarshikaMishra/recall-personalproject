@@ -1,6 +1,4 @@
 import OpenAI from "openai";
-import { processDocument } from "@/lib/documents";
-import { PdfValidationError } from "@/lib/pdf";
 
 export async function POST(request: Request) {
   if (
@@ -13,6 +11,8 @@ export async function POST(request: Request) {
     );
   }
 
+  const { processDocument } = await import("@/lib/documents");
+  const { PdfValidationError } = await import("@/lib/pdf");
   let formData: FormData;
 
   try {

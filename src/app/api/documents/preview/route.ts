@@ -1,4 +1,3 @@
-import { extractPdf, PdfValidationError } from "@/lib/pdf";
 import { chunkPages } from "@/lib/chunking";
 
 export async function POST(request: Request) {
@@ -9,6 +8,7 @@ export async function POST(request: Request) {
       { status: 403 },
     );
   }
+  const { extractPdf, PdfValidationError } = await import("@/lib/pdf");
 
   let formData: FormData;
 
