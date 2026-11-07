@@ -1,0 +1,100 @@
+{
+  "mode": "precomputed",
+  "title": "Harborlight Workspace Handbook",
+  "description": "Original fictional sample document created for Recall.",
+  "pdfUrl": "/sample/recall-handbook.pdf",
+  "pdfSha256": "b6fb6f84fca4a74c1395f3fb0e96d04c67e48ead2bd9a2a1598156a2545d5edd",
+  "generatedAt": "2026-11-07T04:34:59.256Z",
+  "timingNote": "Recorded local generation times, not public demo response times or an independent benchmark.",
+  "answers": [
+    {
+      "id": "membership",
+      "question": "What is included in the Flex membership, and what does it cost?",
+      "status": "answered",
+      "answer": "The Flex membership costs $120 per month. It includes eight workspace visits per calendar month, use of shared desks (not an assigned seat), internet access, drinking water, and use of the shared kitchen. Unused visits expire at month-end and do not roll over. Meeting rooms, printing, and optional event tickets are billed separately. [S1] [S2]",
+      "citations": [
+        {
+          "citationId": "S1",
+          "pageNumber": 1,
+          "content": "HARBORLIGHT WORKSPACE\nMembership and pricing\nHarborlight Workspace is a fictional coworking space used to demonstrate Recall. This handbook\ndescribes its example policies for November 2026. All people, prices, services, and procedures in this\ndocument are fictional. It is a product demonstration document, not an agreement with a real business.\nThe Flex membership costs $120 per month and includes eight workspace visits per calendar month. A\nvisit is counted when a member checks in, regardless of how long they stay. Unused visits expire at the\nend of the month and do not roll over. Flex members use shared desks rather than assigned seats.\nThe Resident membership costs $240 per month and includes unlimited workspace visits during normal\nopening hours. It also includes a dedicated desk and a small lockable drawer. Resident membership\ndoes not include overnight access. Both membership types include internet access, drinking water, and\nuse of the shared kitchen.\nMembership charges are collected on the first day of each month. A member may switch plans for the\nfollowing month by submitting a request before the 25th. Plan changes do not take effect immediately.\nMembership prices exclude"
+        },
+        {
+          "citationId": "S2",
+          "pageNumber": 1,
+          "content": "lected on the first day of each month. A member may switch plans for the\nfollowing month by submitting a request before the 25th. Plan changes do not take effect immediately.\nMembership prices exclude meeting-room charges, printing charges, and optional event tickets, which\nare billed separately.\nFictional Recall sample | November 2026 | Page 1 of 6"
+        }
+      ],
+      "model": "gpt-5.6-terra",
+      "recordedServerDurationMs": 3139
+    },
+    {
+      "id": "meeting-room",
+      "question": "How much does the Maple meeting room cost, and how many people can it seat?",
+      "status": "answered",
+      "answer": "The Maple meeting room costs $20 per hour and seats eight people. [S1]",
+      "citations": [
+        {
+          "citationId": "S1",
+          "pageNumber": 3,
+          "content": "HARBORLIGHT WORKSPACE\nMeeting rooms and reservations\nHarborlight has two meeting rooms. Cedar seats four people and costs $12 per hour. Maple seats eight\npeople and costs $20 per hour. Room charges apply to both membership plans. A membership\nprovides workspace access but does not include complimentary meeting-room hours.\nReservations can be made up to 14 days in advance. Each reservation must last at least 30 minutes\nand no more than three hours. A member may hold up to two future room reservations at a time. Once\na reservation ends, it no longer counts toward that limit.\nThe member who books a room must attend the meeting and remains responsible for the reservation.\nRooms may be used for team discussions, interviews, or video calls. The number of people in the room\nmust not exceed its stated capacity. A room reservation does not authorize access outside normal\nopening hours.\nMembers must check in for a room within 10 minutes of the scheduled start. After that grace period,\nreception may release the room to another member. A released reservation is treated as a no-show and\nis charged in full. A reservation ends at its scheduled time even when the meeting begins late.\nFictional"
+        }
+      ],
+      "model": "gpt-5.6-terra",
+      "recordedServerDurationMs": 1859
+    },
+    {
+      "id": "cancellation",
+      "question": "When can I cancel a meeting-room reservation and receive a full refund?",
+      "status": "answered",
+      "answer": "You receive a full refund of the room charge if you cancel at least 24 hours before the reservation’s scheduled start time. If Harborlight cancels because the room is unavailable, the room charge is fully refunded regardless of notice. [S1]",
+      "citations": [
+        {
+          "citationId": "S1",
+          "pageNumber": 4,
+          "content": "HARBORLIGHT WORKSPACE\nCancellations and refunds\nA meeting-room reservation canceled at least 24 hours before its start receives a full refund of the room\ncharge. A cancellation made less than 24 hours before the start receives no refund. The cancellation\ntime is measured against the scheduled start, not the time the member originally made the booking.\nFor example, canceling a Thursday 2:00 p.m. room reservation by Wednesday 2:00 p.m. qualifies for a\nfull refund. Canceling it on Thursday morning does not. Moving a reservation to another date counts as\ncanceling the original booking and creating a new one, so the same refund deadline applies.\nIf Harborlight cancels a reservation because a room is unavailable, the room charge is refunded in full\nregardless of notice. Members may accept an alternative room instead, but only with their agreement.\nRefunds return to the original payment method and are submitted within five business days.\nTo end a membership, a member must submit a cancellation request before the 25th of the current\nmonth. Access continues through the final day of that month. Requests received on or after the 25th\ntake effect at the end of the following month. Monthly"
+        }
+      ],
+      "model": "gpt-5.6-terra",
+      "recordedServerDurationMs": 1559
+    },
+    {
+      "id": "guests",
+      "question": "How long can a guest visit for free, and what happens if they stay longer?",
+      "status": "answered",
+      "answer": "A member may bring one guest per day for free for up to two hours, provided the host remains with them. If the guest stays longer than two hours, they need a $15 day pass (subject to available space), which allows workspace use until closing that day and excludes meeting-room charges. [S1]",
+      "citations": [
+        {
+          "citationId": "S1",
+          "pageNumber": 5,
+          "content": "HARBORLIGHT WORKSPACE\nGuests and shared-space rules\nEach member may bring one guest per day for up to two hours without a guest fee. The host must\nremain with the guest throughout the visit. Guests must sign in at reception and wear a visitor badge. A\nguest visit does not create a separate membership or provide independent workspace access.\nA guest staying longer than two hours needs a $15 day pass, subject to available space. The day pass\ncovers workspace use until closing on that day. It does not include meeting-room charges. A member\nhosting a meeting must account for the room's capacity even when guests have day passes.\nThe quiet zone is reserved for individual work. Phone calls and video meetings are not permitted there,\neven when headphones are used. Members may take short calls in a phone booth or book a meeting\nroom for longer conversations. Phone booths cannot be reserved and have a 30-minute continuous-use\nlimit.\nFood is permitted in the kitchen and lounge, but not in the quiet zone or meeting rooms. Drinks in\nclosed containers are permitted at desks. Members should clear shared desks when leaving for the day\nand return borrowed chargers to reception. Personal items left"
+        }
+      ],
+      "model": "gpt-5.6-terra",
+      "recordedServerDurationMs": 2171
+    },
+    {
+      "id": "printing",
+      "question": "How much does black-and-white printing cost per side?",
+      "status": "answered",
+      "answer": "Black-and-white printing costs $0.08 per printed side. [S1]",
+      "citations": [
+        {
+          "citationId": "S1",
+          "pageNumber": 6,
+          "content": "HARBORLIGHT WORKSPACE\nPrinting, storage, and support\nBlack-and-white printing costs $0.08 per printed side. Color printing costs $0.30 per printed side.\nDouble-sided printing therefore incurs two side charges for each sheet. Printing is billed separately from\nmembership. Members confirm the number of sides and whether color is needed before submitting a\nprint job.\nPrint files are automatically removed from the print queue after 24 hours, whether or not they were\nprinted. This rule applies to uploaded print files, not to membership records or payment records.\nMembers should collect printed pages promptly. Reception does not check printed documents for\naccuracy or completeness.\nResident members may keep personal work materials in their assigned drawer during an active\nmembership. Shared desks do not include storage. Lost-property items are held for 30 calendar days\nafter they are found. Members can ask reception about a missing item by describing it and giving the\napproximate date it was lost.\nGeneral support requests can be submitted through the member portal. The target for an initial\nresponse is one business day; this is not a guaranteed resolution time. For an access problem"
+        }
+      ],
+      "model": "gpt-5.6-terra",
+      "recordedServerDurationMs": 1503
+    },
+    {
+      "id": "parking",
+      "question": "Does the workspace provide free parking?",
+      "status": "insufficient_information",
+      "answer": "The document does not provide enough information to answer this question.",
+      "citations": [],
+      "model": "gpt-5.6-terra",
+      "recordedServerDurationMs": 1773
+    }
+  ]
+}
