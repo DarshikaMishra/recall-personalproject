@@ -1,4 +1,5 @@
 import { extractPdf, PdfValidationError } from "@/lib/pdf";
+import { chunkPages } from "@/lib/chunking";
 
 export async function POST(request: Request) {
   // The public deployment will serve a precomputed sample demo.
@@ -31,7 +32,12 @@ export async function POST(request: Request) {
 
   try {
     const document = await extractPdf(file);
-    return Response.json(document);
+    const passages = chunkPages(document.pages);
+
+    return Response.json({
+      ...document,
+      passages,
+    });
   } catch (error) {
     if (error instanceof PdfValidationError) {
       return Response.json({ error: error.message }, { status: 400 });

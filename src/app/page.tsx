@@ -10,6 +10,11 @@ type DocumentPreview = {
     pageNumber: number;
     text: string;
   }[];
+  passages: {
+    pageNumber: number;
+    chunkIndex: number;
+    content: string;
+  }[];
 };
 
 export default function Home() {
@@ -140,7 +145,36 @@ export default function Home() {
                 {preview.characterCount.toLocaleString()} characters
               </p>
             </div>
+            <details className="rounded-xl border border-slate-700 p-5">
+              <summary className="cursor-pointer font-medium text-teal-300">
+                Inspect {preview.passages.length} search passages
+              </summary>
 
+              <p className="mt-3 text-sm text-slate-400">
+                Passages stay within one PDF page. Adjacent passages may overlap
+                to preserve context.
+              </p>
+
+              <div className="mt-4 space-y-4">
+                {preview.passages.map((passage) => (
+                  <article
+                    key={passage.chunkIndex}
+                    className="rounded-lg bg-slate-900 p-4"
+                  >
+                    <h3 className="text-sm font-medium text-teal-300">
+                      Passage {passage.chunkIndex + 1} · Page{" "}
+                      {passage.pageNumber}
+                      {" · "}
+                      {passage.content.length} characters
+                    </h3>
+
+                    <p className="mt-2 whitespace-pre-wrap break-words text-sm leading-7 text-slate-300">
+                      {passage.content}
+                    </p>
+                  </article>
+                ))}
+              </div>
+            </details>
             {preview.pages.map((page) => (
               <article
                 key={page.pageNumber}
