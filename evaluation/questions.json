@@ -1,0 +1,170 @@
+[
+  {
+    "id": "q01",
+    "question": "Can unused Flex visits be carried into the next month?",
+    "page": 1,
+    "evidence": "do not roll over",
+    "expectedAnswer": "No. Unused visits expire at the end of the month."
+  },
+  {
+    "id": "q02",
+    "question": "What is the deadline to request a different membership plan for next month?",
+    "page": 1,
+    "evidence": "before the 25th",
+    "expectedAnswer": "Submit the request before the 25th of the current month."
+  },
+  {
+    "id": "q03",
+    "question": "Does having a Resident membership allow overnight access?",
+    "page": 1,
+    "evidence": "does not include overnight access",
+    "expectedAnswer": "No. Resident membership does not include overnight access."
+  },
+  {
+    "id": "q04",
+    "question": "On what day are monthly membership payments collected?",
+    "page": 1,
+    "evidence": "first day of each month",
+    "expectedAnswer": "On the first day of each month."
+  },
+  {
+    "id": "q05",
+    "question": "What are the Saturday opening hours?",
+    "page": 2,
+    "evidence": "9:00 a.m. until 3:00 p.m.",
+    "expectedAnswer": "9:00 a.m. to 3:00 p.m."
+  },
+  {
+    "id": "q06",
+    "question": "How long before closing is the last entry allowed?",
+    "page": 2,
+    "evidence": "30 minutes before closing",
+    "expectedAnswer": "The final entry time is 30 minutes before closing."
+  },
+  {
+    "id": "q07",
+    "question": "How do replacement fees differ for physical access cards and digital passes?",
+    "page": 2,
+    "evidence": "replacement digital pass has no charge",
+    "expectedAnswer": "A replacement physical card costs $10; a replacement digital pass is free."
+  },
+  {
+    "id": "q08",
+    "question": "Can members use the workspace on Sundays?",
+    "page": 2,
+    "evidence": "closed on Sundays",
+    "expectedAnswer": "No. The workspace is closed on Sundays."
+  },
+  {
+    "id": "q09",
+    "question": "What are the capacity and hourly price of Cedar?",
+    "page": 3,
+    "evidence": "Cedar seats four people and costs $12 per hour",
+    "expectedAnswer": "Cedar seats four people and costs $12 per hour."
+  },
+  {
+    "id": "q10",
+    "question": "How far ahead can a meeting room be booked?",
+    "page": 3,
+    "evidence": "up to 14 days in advance",
+    "expectedAnswer": "Up to 14 days in advance."
+  },
+  {
+    "id": "q11",
+    "question": "What are the shortest and longest permitted room reservations?",
+    "page": 3,
+    "evidence": "no more than three hours",
+    "expectedAnswer": "At least 30 minutes and no more than three hours."
+  },
+  {
+    "id": "q12",
+    "question": "How many future room bookings can one member hold?",
+    "page": 3,
+    "evidence": "two future room reservations",
+    "expectedAnswer": "Up to two future room reservations at a time."
+  },
+  {
+    "id": "q13",
+    "question": "What happens if I do not check in for my meeting room within ten minutes?",
+    "page": 3,
+    "evidence": "treated as a no-show",
+    "expectedAnswer": "Reception may release the room. A released reservation is a no-show and is charged in full."
+  },
+  {
+    "id": "q14",
+    "question": "Will I get a room refund if I cancel on the morning of an afternoon booking?",
+    "page": 4,
+    "evidence": "less than 24 hours before the start receives no refund",
+    "expectedAnswer": "No. That is less than 24 hours before the scheduled start."
+  },
+  {
+    "id": "q15",
+    "question": "If I cancel my membership on the 25th, when does the cancellation take effect?",
+    "page": 4,
+    "evidence": "end of the following month",
+    "expectedAnswer": "At the end of the following month."
+  },
+  {
+    "id": "q16",
+    "question": "How soon are refunds submitted, and where are they sent?",
+    "page": 4,
+    "evidence": "within five business days",
+    "expectedAnswer": "Refunds are submitted within five business days to the original payment method."
+  },
+  {
+    "id": "q17",
+    "question": "Can I reserve a phone booth for an hour-long call?",
+    "page": 5,
+    "evidence": "30-minute continuous-use",
+    "expectedAnswer": "No. Phone booths cannot be reserved and have a 30-minute continuous-use limit."
+  },
+  {
+    "id": "q18",
+    "question": "Where may members eat, and where is food prohibited?",
+    "page": 5,
+    "evidence": "Food is permitted in the kitchen and lounge",
+    "expectedAnswer": "Food is allowed in the kitchen and lounge, but not in the quiet zone or meeting rooms."
+  },
+  {
+    "id": "q19",
+    "question": "When are uploaded print files removed if they are never printed?",
+    "page": 6,
+    "evidence": "after 24 hours",
+    "expectedAnswer": "They are removed from the print queue after 24 hours whether printed or not."
+  },
+  {
+    "id": "q20",
+    "question": "How long does reception keep lost property?",
+    "page": 6,
+    "evidence": "30 calendar days",
+    "expectedAnswer": "Lost-property items are held for 30 calendar days after being found."
+  },
+  {
+    "id": "u01",
+    "question": "What is the monthly parking fee?",
+    "page": null,
+    "evidence": null,
+    "expectedAnswer": "Insufficient information."
+  },
+  {
+    "id": "u02",
+    "question": "Are dogs allowed in the workspace?",
+    "page": null,
+    "evidence": null,
+    "expectedAnswer": "Insufficient information."
+  },
+  {
+    "id": "u03",
+    "question": "Which countries have Harborlight locations?",
+    "page": null,
+    "evidence": null,
+    "expectedAnswer": "Insufficient information."
+  },
+  {
+    "id": "u04",
+    "question": "What is the workspace manager's birthday?",
+    "page": null,
+    "evidence": null,
+    "expectedAnswer": "Insufficient information."
+  }
+]
